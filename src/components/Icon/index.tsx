@@ -1,0 +1,76 @@
+import React from "react";
+
+import iconList from "./iconList";
+
+export interface IconProps {
+  size?:
+    | "lg"
+    | "xl"
+    | " xxs"
+    | "xs"
+    | "sm"
+    | "1x"
+    | "2x"
+    | "3x"
+    | "4x"
+    | "5x"
+    | "6x"
+    | "7x"
+    | "8x"
+    | "9x"
+    | "10x"
+    | "fw";
+  name: string;
+  component?: React.ElementType;
+  role?: string;
+  ariaHidden?: string;
+  userClass?: string;
+  ref?: React.Ref<HTMLElement>;
+  type: "fill" | "line";
+}
+
+const Icon: React.FC<IconProps> = props => {
+  const {
+    name,
+    size,
+    component,
+    role,
+    ariaHidden,
+    userClass,
+    ref,
+    children,
+    type,
+    ...remainder
+  } = props;
+  if (!iconList.includes(name)) {
+    log(`Could not find icon ${name}`);
+    return null;
+  }
+  const CustomTag = component || "i";
+
+  return (
+    <CustomTag
+      aria-hidden={ariaHidden || "true"}
+      role={role || "presentation"}
+      className={[
+        `remixicon-${name}-${type || "fill"} ${size ? `ri-${size}` : ""}`,
+        userClass
+      ]
+        .filter(e => e)
+        .join(" ")}
+      {...remainder}
+      ref={ref}
+    >
+      {children}
+    </CustomTag>
+  );
+};
+
+export default React.memo(Icon);
+
+const log = (message: string) => {
+  if (!(process && process.env && process.env.NODE_ENV === "production")) {
+    // eslint-disable-next-line no-console
+    console.error(`[react-remixicon]: ${message}.`);
+  }
+};
