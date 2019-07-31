@@ -30,7 +30,7 @@ export interface IconProps {
   style?: Object;
 }
 
-const Icon: React.FC<IconProps> = props => {
+const Icon: React.FC<IconProps> = (props, ref) => {
   const {
     name,
     size,
@@ -38,7 +38,6 @@ const Icon: React.FC<IconProps> = props => {
     role,
     ariaHidden,
     userClass,
-    ref,
     children,
     type,
     style,
@@ -69,7 +68,7 @@ const Icon: React.FC<IconProps> = props => {
   );
 };
 
-export default React.memo(Icon);
+export default React.memo(React.forwardRef(Icon));
 
 const log = (message: string) => {
   if (!(process && process.env && process.env.NODE_ENV === "production")) {
