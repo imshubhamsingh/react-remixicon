@@ -2,9 +2,9 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, select, object } from "@storybook/addon-knobs";
 
-import iconList from "./iconList";
+import iconList from "../../src/components/Icon/iconList";
 
-import Icon from "./index";
+import Icon from "../../src";
 
 type size =
   | "lg"

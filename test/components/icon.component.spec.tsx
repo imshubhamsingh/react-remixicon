@@ -2,12 +2,10 @@ import * as React from "react";
 import { expect } from "chai";
 import { mount } from "enzyme";
 
-import Icon from "../index";
+import Icon from "../../src/";
 
 describe("Icon component", function describe() {
   it("should render correctly", () => {
-    // This will only test the test stub defined in test.setup.js
-    // Testing the real Icon component hasn't succeeded yet.
     const wrapper = mount(<Icon name="home-3" type="line" size="3x" />);
     expect(wrapper.props()).to.eql({
       type: "line",
