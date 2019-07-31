@@ -2,11 +2,12 @@ import * as React from "react";
 
 import iconList from "./iconList";
 
+import "remixicon/fonts/remixicon.css";
 export interface IconProps {
   size?:
     | "lg"
     | "xl"
-    | " xxs"
+    | "xxs"
     | "xs"
     | "sm"
     | "1x"
