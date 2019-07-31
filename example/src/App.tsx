@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Icon } from "react-remixicon";
+import Icon from "react-remixicon";
 
 class App extends Component {
   render() {
-    console.log(Icon);
     return (
       <div>
-        <Icon name="home-3-line" ariaHidden="false" size="3x" />
+        <Icon name="home-3" type="line" ariaHidden="false" size="3x" />
         hi
       </div>
     );

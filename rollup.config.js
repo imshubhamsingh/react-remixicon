@@ -1,19 +1,21 @@
 import typescript from "rollup-plugin-typescript2";
+import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
 
 import pkg from "./package.json";
 
 export default [
   {
     input: "src/index.ts",
-    external: Object.keys(pkg.peerDependencies || {}),
+    external: Object.keys(pkg.peerDependencies),
     plugins: [
       typescript({
         typescript: require("typescript")
       }),
-      resolve(),
-      commonjs()
+      postcss({
+        extensions: [".css"]
+      }),
+      resolve()
     ],
     output: [
       { file: pkg.main, format: "cjs" },

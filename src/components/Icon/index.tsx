@@ -26,7 +26,8 @@ export interface IconProps {
   ariaHidden?: string;
   userClass?: string;
   ref?: React.Ref<HTMLElement>;
-  type: "fill" | "line";
+  type?: "fill" | "line";
+  style?: Object;
 }
 
 const Icon: React.FC<IconProps> = props => {
@@ -40,6 +41,7 @@ const Icon: React.FC<IconProps> = props => {
     ref,
     children,
     type,
+    style,
     ...remainder
   } = props;
   if (!iconList.includes(name)) {
@@ -60,6 +62,7 @@ const Icon: React.FC<IconProps> = props => {
         .join(" ")}
       {...remainder}
       ref={ref}
+      style={style}
     >
       {children}
     </CustomTag>
