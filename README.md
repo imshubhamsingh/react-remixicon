@@ -1,6 +1,7 @@
 
 # react-remixicons 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Build Status](https://travis-ci.com/imshubhamsingh/react-remixicon.svg?token=gtzMwXPBX5XyX3Gzv2LJ&branch=master)](https://travis-ci.com/imshubhamsingh/react-remixicon)
 
 
 ### Description
@@ -27,7 +28,7 @@ Remix Icons as React Component
 
 
 ### Demo
-View the [DEMO](https://imshubhamsingh.github.io/react-remixicon)
+View the [DEMO](https://imshubhamsingh.github.io/react-remixicon/?path=/story/icon--name)
 
 ### API
 | Prop name | Type      | Default      | Description |
