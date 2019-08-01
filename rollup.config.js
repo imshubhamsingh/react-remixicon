@@ -7,7 +7,7 @@ import pkg from "./package.json";
 export default [
   {
     input: "src/index.ts",
-    external: Object.keys(pkg.peerDependencies),
+    external: ["react", "remixicon"],
     plugins: [
       typescript({
         typescript: require("typescript")
