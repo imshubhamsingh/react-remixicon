@@ -5,7 +5,7 @@
 
 
 ### Description
-Remix Icons as React Component
+[Remix Icons](https://remixicon.com/) as React Component
 
 
 ### Installation
