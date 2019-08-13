@@ -929,7 +929,7 @@ var Icon = function (props, ref) {
     }
     var CustomTag = component || "i";
     return (createElement(CustomTag, __assign({ "aria-hidden": ariaHidden || "true", role: role || "presentation", className: [
-            "remixicon-" + name + "-" + (type || "fill") + " " + (size ? "ri-" + size : ""),
+            "remixicon-" + name + (type !== undefined ? "-" + type : "") + " " + (size ? "ri-" + size : ""),
             userClass
         ]
             .filter(function (e) { return e; })

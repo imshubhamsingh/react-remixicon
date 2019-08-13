@@ -55,7 +55,9 @@ const Icon: React.FC<IconProps> = (props, ref) => {
       aria-hidden={ariaHidden || "true"}
       role={role || "presentation"}
       className={[
-        `remixicon-${name}-${type || "fill"} ${size ? `ri-${size}` : ""}`,
+        `remixicon-${name}${type !== undefined ? `-${type}` : ""} ${
+          size ? `ri-${size}` : ""
+        }`,
         userClass
       ]
         .filter(e => e)

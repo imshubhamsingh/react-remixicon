@@ -24,12 +24,16 @@ type size =
   | "10x"
   | "fw";
 
-type _type = "fill" | "line";
+type _type = "" | "fill" | "line";
 
 storiesOf("Icon", module)
   .addDecorator(withKnobs)
   .add("name", () => (
-    <Icon name={select("name", iconList, "account-box")} size="3x" />
+    <Icon
+      name={select("name", iconList, "account-box")}
+      type="line"
+      size="3x"
+    />
   ))
   .add("size", () => (
     <Icon
@@ -55,6 +59,7 @@ storiesOf("Icon", module)
         ] as size[],
         "1x"
       )}
+      type="line"
       name={select("name", iconList, "account-box")}
     />
   ))
@@ -72,6 +77,7 @@ storiesOf("Icon", module)
         color: "pink",
         border: "5px dotted limegreen"
       })}
+      type="line"
       name={select("name", iconList, "account-box")}
     />
   ));
