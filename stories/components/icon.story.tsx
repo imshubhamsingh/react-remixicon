@@ -24,7 +24,7 @@ type size =
   | "10x"
   | "fw";
 
-type _type = "" | "fill" | "line";
+type _type = "fill" | "line";
 
 storiesOf("Icon", module)
   .addDecorator(withKnobs)
